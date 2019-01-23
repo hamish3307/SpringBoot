@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  # 国际化（消息源自动配置,springboot默认找出messages）
+  messages:
+    basename: i18n.messages
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/ssmdemo?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: qwer1234
+    type: com.alibaba.druid.pool.DruidDataSource
