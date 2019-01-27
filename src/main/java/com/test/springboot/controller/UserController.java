@@ -33,12 +33,17 @@ public class UserController {
 
     @RequestMapping("/save")
     public void saveOrUpdate(){
-
+        User user = new User();
+        user.setName("盖聂");
+        user.setAge(30);
+        user.setSex("男");
+        user.setTel("15679420900");
+        userService.save(user);
     }
 
     @RequestMapping("/delete")
-    public void delete(){
-
+    public void delete(String id){
+        userService.delete(id);
     }
 
 }
