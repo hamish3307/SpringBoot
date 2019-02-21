@@ -67,9 +67,16 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <!--kafka-->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.10</artifactId>
+            <version>0.10.1.0</version>
+        </dependency>
+
     </dependencies>
 
-       <build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -77,7 +84,5 @@
             </plugin>
         </plugins>
     </build>
-
-
 
 </project>
