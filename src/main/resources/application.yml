@@ -10,3 +10,16 @@ spring:
     username: root
     password: qwer1234
     type: com.alibaba.druid.pool.DruidDataSource
+  #静态资源
+  mvc:
+    static-path-pattern: /static/**
+
+
+#添加Thymeleaf配置
+thymeleaf:
+  cache: false
+  prefix: classpath:/templates/
+  suffix: .html
+  mode: HTML5
+  encoding: UTF-8
+  content-type: text/html
