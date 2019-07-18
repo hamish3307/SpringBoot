@@ -1,5 +1,7 @@
 server:
-  port: 8080
+  port: 80
+  servlet:
+    context-path: /ssm
 spring:
   # 国际化（消息源自动配置,springboot默认找出messages）
   messages:

@@ -14,12 +14,10 @@ public interface IUserService {
 
     List<User> findUserAll();
 
-    List<User> findUserById(String id);
+    User findUserById(String id);
 
-    int save(User user);
+    boolean saveOrUpdate(User user);
 
-    int update(User user);
-
-    int delete(String id);
+    boolean delete(String id);
 
 }

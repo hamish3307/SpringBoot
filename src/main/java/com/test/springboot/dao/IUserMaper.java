@@ -18,7 +18,7 @@ public interface IUserMaper {
     List<User> findUserAll();
 
     @Select("select * from user where id = #{id}")
-    List<User> findUserById(String id);
+    User findUserById(String id);
 
     @Insert("insert into user(id,name,age,sex,tel) values(#{id},#{name},#{age},#{sex},#{tel})")
     int save(User user);

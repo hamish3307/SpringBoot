@@ -4,6 +4,7 @@ import com.test.springboot.dao.IUserMaper;
 import com.test.springboot.model.User;
 import com.test.springboot.service.IUserService;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -26,23 +27,33 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public List<User> findUserById(String id) {
+    public User findUserById(String id) {
         return userMaper.findUserById(id);
     }
 
     @Override
-    public int save(User user) {
-        return userMaper.save(user);
+    public boolean saveOrUpdate(User user) {
+        int num = 0;
+        if (StringUtils.isEmpty(user.getId())) {
+            num = userMaper.save(user);
+        } else {
+            num = userMaper.update(user);
+        }
+        if (num > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
-    public int update(User user) {
-        return userMaper.update(user);
-    }
-
-    @Override
-    public int delete(String id) {
-        return userMaper.delete(id);
+    public boolean delete(String id) {
+        int num = userMaper.delete(id);
+        if (num > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
