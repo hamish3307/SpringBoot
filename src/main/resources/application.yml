@@ -12,12 +12,32 @@ spring:
     username: root
     password: qwer1234
     type: com.alibaba.druid.pool.DruidDataSource
-  #静态资源
+  # 静态资源
   mvc:
     static-path-pattern: /static/**
+  # Redis相关配置
+  redis:
+    # Redis数据库索引（默认为0）
+    database: 0
+    # Redis服务器地址
+    host: 127.0.0.1
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接用户名
+    user: root
+    # Redis服务器连接密码（默认为空）
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 0s
+        max-idle: 500
+        min-idle: 1
+    lettuce:
+      shutdown-timeout: 0s
 
 
-#添加Thymeleaf配置
+# 添加Thymeleaf配置
 thymeleaf:
   cache: false
   prefix: classpath:/templates/
@@ -25,3 +45,4 @@ thymeleaf:
   mode: HTML5
   encoding: UTF-8
   content-type: text/html
+
