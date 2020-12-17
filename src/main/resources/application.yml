@@ -35,6 +35,12 @@ spring:
         min-idle: 1
     lettuce:
       shutdown-timeout: 0s
+#mybatis配置
+mybatis:
+  #配置mapper xml文件所在路径
+  mapper-locations: classpath:com.test.springboot.dao/**/*.xml
+  type-aliases-package: com.test.springboot.model
+
 
 
 # 添加Thymeleaf配置

@@ -12,21 +12,21 @@ import java.util.List;
  * <p>作者: hha
  */
 @Mapper
-public interface IUserMaper {
+public interface IUserMaper extends Mapper {
 
-    @Select("select * from user")
+//    @Select("select * from user")
     List<User> findUserAll();
 
-    @Select("select * from user where id = #{id}")
+//    @Select("select * from user where id = #{id}")
     User findUserById(String id);
 
-    @Insert("insert into user(id,name,age,sex,tel) values(#{id},#{name},#{age},#{sex},#{tel})")
+//    @Insert("insert into user(id,name,age,sex,tel) values(#{id},#{name},#{age},#{sex},#{tel})")
     int save(User user);
 
-    @Update("update user set name = #{name}, age = #{age}, sex = #{sex},tel = #{tel} where id = #{id}")
+//    @Update("update user set name = #{name}, age = #{age}, sex = #{sex},tel = #{tel} where id = #{id}")
     int update(User user);
 
-    @Delete("delete from user where id = #{id}")
+//    @Delete("delete from user where id = #{id}")
     int delete(String id);
 
 }
